@@ -11,6 +11,7 @@ public class ParentalControlHideService extends AccessibilityService {
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
         AccessibilityNodeInfo source = event.getSource();
+        String msg = getString(R.string.app_restricted_message);
 
         if(event.getEventType()==AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
             if (source != null) {
@@ -18,13 +19,11 @@ public class ParentalControlHideService extends AccessibilityService {
                 for (int i = 0; i < childNum; i++) {
                     AccessibilityNodeInfo c = source.getChild(i);
                     if(c.getClassName().toString().contains("TextView")) {
-                        if (c.getText().toString().contains("L'azione richiesta non è consentita. " +
-                                "Controlla le impostazioni di Parental Control e riprova."))
+                        if (c.getText().toString().contains(msg))
                             performGlobalAction(GLOBAL_ACTION_BACK);
                     }
                 }
             }
-
         }
     }
 

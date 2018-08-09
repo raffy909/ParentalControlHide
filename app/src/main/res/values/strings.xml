@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ParentalControlHide</string>
+    <string name="app_name" translatable="false">ParentalControlHide</string>
+    <string name="app_restricted_message">The requested action is not permitted. Check Parental Controls settings and retry.</string>
 </resources>
