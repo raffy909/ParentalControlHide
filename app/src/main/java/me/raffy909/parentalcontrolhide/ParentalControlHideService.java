@@ -1,30 +1,26 @@
 package me.raffy909.parentalcontrolhide;
 
 import android.accessibilityservice.AccessibilityService;
-import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
+
 
 public class ParentalControlHideService extends AccessibilityService {
     static final String TAG = "ParentalHideService";
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        AccessibilityNodeInfo source = event.getSource();
         String msg = getString(R.string.app_restricted_message);
 
         if(event.getEventType()==AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
-            if (source != null) {
-                int childNum = source.getChildCount();
-                for (int i = 0; i < childNum; i++) {
-                    AccessibilityNodeInfo c = source.getChild(i);
-                    if(c.getClassName().toString().contains("TextView")) {
-                        if (c.getText().toString().contains(msg))
-                            performGlobalAction(GLOBAL_ACTION_BACK);
-                    }
-                }
-            }
+            String name = event.getClassName().toString();
+            String text = event.getText().toString();
+
+            //Log.i(TAG, name + ':' + text);
+            if(name.contains("android.app.AlertDialog"))
+                if(text.contains(msg))
+                    performGlobalAction(GLOBAL_ACTION_BACK);
         }
+
     }
 
     @Override
