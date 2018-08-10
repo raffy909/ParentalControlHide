@@ -12,8 +12,6 @@ public class ParentalControlHideService extends AccessibilityService {
     public void onAccessibilityEvent(AccessibilityEvent event) {
         String msg = getString(R.string.app_restricted_message);
 
-        Log.i(TAG, msg);
-
         if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
             String name = event.getClassName().toString();
             String text = event.getText().toString();
