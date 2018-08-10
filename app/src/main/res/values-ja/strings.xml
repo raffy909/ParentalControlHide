@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_restricted_message">要求された操作は許可されていません。機能制限の設定を確認してもう一度お試しください。</string>
+</resources>

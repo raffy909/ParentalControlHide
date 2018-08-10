@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_restricted_message">A ação solicitada não é permitida. Verifique as configurações do Controle dos pais e tente novamente.</string>
+</resources>

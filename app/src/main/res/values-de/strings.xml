@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_restricted_message">Die angeforderte Aktion ist nicht zulässig. Prüfen Sie die Einstellungen für die Kindersicherung und versuchen Sie es erneut.</string>
+</resources>

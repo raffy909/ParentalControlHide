@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_restricted_message">La acción solicitada no es compatible. Comprueba la configuración de Control parental y vuelve a intentarlo.</string>
+</resources>
